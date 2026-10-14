@@ -3,8 +3,8 @@ class BoschClimateControlsFeature extends HTMLElement {
   constructor() {
     super(); this.attachShadow({mode:'open'});
     this.shadowRoot.innerHTML = `<style>
-      :host{display:block}.control{position:relative}.icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);pointer-events:none;--mdc-icon-size:22px;color:var(--primary-text-color,#222)}select{box-sizing:border-box;width:100%;height:var(--feature-height,42px);border:0;border-radius:var(--feature-border-radius,12px);padding:0 16px 0 48px;background:var(--secondary-background-color,#f2f2f2);color:var(--primary-text-color,#222);font:inherit;cursor:pointer}select:disabled{opacity:.5}.error{color:var(--error-color,#db4437);font-size:12px}.error:empty{display:none}
-    </style><div class="control"><ha-icon class="icon" aria-hidden="true"></ha-icon><select></select></div><div class="error" role="status"></div>`;
+      :host{display:block}.control{position:relative}.icon,.arrow{position:absolute;top:50%;transform:translateY(-50%);pointer-events:none;--mdc-icon-size:24px;color:var(--primary-text-color,#222)}.icon{left:14px}.arrow{right:12px;--mdc-icon-size:20px}select{appearance:none;-webkit-appearance:none;box-sizing:border-box;width:100%;height:var(--feature-height,42px);border:0;border-radius:var(--ha-card-border-radius,12px);padding:0 44px 0 52px;background:var(--secondary-background-color,#f2f2f2);color:var(--primary-text-color,#222);font:inherit;cursor:pointer}select:focus-visible{outline:2px solid var(--primary-color);outline-offset:2px}select:disabled{opacity:.5}.error{color:var(--error-color,#db4437);font-size:12px}.error:empty{display:none}
+    </style><div class="control"><ha-icon class="icon" aria-hidden="true"></ha-icon><select></select><ha-icon class="arrow" icon="mdi:menu-down" aria-hidden="true"></ha-icon></div><div class="error" role="status"></div>`;
     this._select=this.shadowRoot.querySelector('select');
     this._icon=this.shadowRoot.querySelector('ha-icon');
     this._select.addEventListener('click',e=>e.stopPropagation());
