@@ -1,0 +1,9 @@
+{
+  "name": "bosch-climate-ui",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.cjs",
+    "test": "node tests/controls.cjs && node tests/compatibility.cjs && python3 tests/migration.py"
+  }
+}

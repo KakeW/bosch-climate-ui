@@ -1,0 +1,1 @@
+const fs=require('node:fs'),path=require('node:path');const root=path.join(__dirname,'..');const files=['bosch-vane-feature.js','bosch-climate-controls.js'];fs.writeFileSync(path.join(root,'dist/bosch-climate-ui.js'),'// Bosch Climate UI v1.0.0\n'+files.map(f=>'(()=>{\n'+fs.readFileSync(path.join(root,'src',f),'utf8')+'\n})();\n').join(''));
